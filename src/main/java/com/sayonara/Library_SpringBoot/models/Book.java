@@ -10,7 +10,6 @@ import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import java.util.Objects;
 
-// идея не советует использовать Data с JPA
 @Getter
 @Setter
 @ToString
@@ -41,10 +40,6 @@ public class Book {
     @ManyToOne
     @JoinColumn(name = "person_id", referencedColumnName = "id")
     private Person owner;
-
-    public boolean hasOwner() {
-        return getOwner() != null;
-    }
 
     @Override
     public boolean equals(Object o) {

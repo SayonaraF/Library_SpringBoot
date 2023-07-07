@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Стартовая страница</title>
@@ -14,5 +14,17 @@
 <a href="/books">
     <h4>Книги библиотеки</h4>
 </a>
+<br/>
+<p th:text="'Hello ' + ${user.getUsername()}"></p>
+<div th:if="${user.getUser().getRole().equals('ROLE_ADMIN')}">
+    <form th:method="GET" th:action="@{/admin}">
+        <input type="submit" value="Администраторская">
+    </form>
+</div>
+<br/>
+<form th:method="POST" th:action="@{/logout}">
+    <input type="submit" value="Выйти">
+</form>
+
 </body>
 </html>

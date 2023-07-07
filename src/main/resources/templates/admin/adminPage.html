@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Администратор</title>
+</head>
+<body>
+<p>Страница Администратора</p>
+<div th:each="user : ${users}">
+    <form th:method="POST" th:action="@{/admin}">
+        <hr/>
+        <label for="admin" th:text="${user.getUsername}"/>
+        <select th:object="${user}" th:field="*{id}" id="admin">
+            <option th:text="admin" th:value="${user.getId()}"></option>
+        </select>
+        <input type="submit" value="Назначить роль">
+    </form>
+</div>
+
+</body>
+</html>

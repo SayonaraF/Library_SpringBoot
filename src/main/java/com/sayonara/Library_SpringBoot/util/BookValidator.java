@@ -27,7 +27,7 @@ public class BookValidator implements Validator {
         Optional<Book> bookFromBD = booksService.findByName(book.getName());
 
         if (bookFromBD.isPresent() && booksService.findOne(book.getId()).getId() != bookFromBD.get().getId()) {
-            errors.rejectValue("name", "", "Книга с таким названием уже существует");
+            errors.rejectValue("name", "", "Книга с таким именем пользователя уже существует");
         }
     }
 }

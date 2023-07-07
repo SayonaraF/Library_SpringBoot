@@ -27,7 +27,7 @@ public class Person {
     @Pattern(regexp = "(?U)[А-Я]\\w+ [А-Я]\\w+ [А-Я]\\w+", message = "Пример ввода: Иванов Иван Иванович")
     private String name;
 
-    // не понял как правильно отобразить дату в нужжном формате
+    // не понял как правильно отобразить дату в нужном формате
     @Column(name = "birthday")
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "yyyy-MM-dd")

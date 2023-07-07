@@ -26,7 +26,6 @@ public class BookController {
         this.bookValidator = bookValidator;
     }
 
-
     @GetMapping
     public String index(Model model) {
         model.addAttribute("books", booksService.findAll());

@@ -21,7 +21,7 @@
 
 <hr/>
 
-<form method="get" th:action="@{/people/{id}/update(id=${person.getId()})}">
+<form th:method="GET" th:action="@{/people/{id}/update(id=${person.getId()})}">
     <input type="submit" value="Редактировать"/>
 </form>
 <form th:method="DELETE" th:action="@{/people/{id}(id=${person.getId()})}">
